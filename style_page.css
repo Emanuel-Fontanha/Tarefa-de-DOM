@@ -1,0 +1,422 @@
+/* Know How de CSS
+
+    color, background-color;
+    width, height;
+    border, border-radius;
+    content, padding, border, margin;
+    display: block, inline, inline-block, flex;
+    
+    MULTIUSO: p, li, h1 {...}
+    
+    FONTES: font-size (tamanho), font-family (arial), font-weight (bold), font-style (itálico), line-height (distância entre linhas), text-align (justificado), text-decoration (sublinhado), letter-spacing, word-spacing;
+
+    SELETORES: elemento (h1), classe (.título), id (#título);
+    -> hierarquia: inline, id, classe, elemento;
+    -> acesso de filho pelo pai: .teste1 > div: nth-child(n);
+    -> avançados: usar box-sizing: border-box pra manter o tamanho original;
+        -> pseudo-classes (:) 
+            -> <nome_classe>.hover: muda o estilo while hovering with the mouse; transition: reduz a rispidez da animação;
+            -> <nome_classe>.focus: hover para quando o elemento é selecionado;
+        -> pseudo-elementos (::) -> ?
+        -> de atributos (função[atributo = ""]): modifica os atributos do elemento;
+
+    TRANSFORMAÇÃO: transform() -> translate: eixos XYZ, rotate, scale;
+
+    POSIÇÃO: static (auto), relative (em relação ao elemento mais próximo), fixed (em relação à página), sticky (se move com base numa distância de um ponto da pág);
+
+    RESPONSIVIDADE: 
+    -> estratégia responsiva: mobile first (mais simples -> menos pot.), desktop first (mais elaborado -> mais pot.);
+    -> media querie (@media (...) {...}): atribui responsividade condicional.
+    
+    PALETA DE CORES: 
+    -> azul escuro: #0074af; claro: #00aeef
+    -> abóbora escuro: #e4722c; claro: #ffa300
+    -> amarelo: #ffd000
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100vw;
+}
+
+body {
+    font-family: montserrat;
+}
+
+/*--------------------------HEADER-----------------------------*/
+
+header {
+    background-color: #e4722c;
+    padding: 28px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    color: #ffffff;
+    text-shadow:#ffa300 2px 2px;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    text-decoration: none;
+}
+
+header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow:#ffa300 2px 2px;
+
+    &:hover {
+        color: #862f2f;
+        transition: 0.2s;
+    }
+}
+
+/*--------------------------APRESENTAÇÃO-----------------------------*/
+
+.sobre {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    min-height: 400px;
+    background-color: #ffa300;
+    justify-content: space-around;
+}
+
+.photo {
+    display: flex;
+    height: 80%
+}
+
+.photo figure {
+    display: flex;
+    gap: 20px;
+}
+
+.photo figure img {
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: #796d3c 3px 3px;
+
+    &:hover {
+        transform: scale(1.2);
+        transition: 0.2s;
+    }
+}
+
+.apresentação {
+    color: #ffffff;
+    width: 60%;
+    text-align: center;
+}
+
+.apresentação h2 {
+    max-width: 800px;
+    transform: translate(0px, -10px);
+    text-shadow: #796d3c 2px 2px;
+}
+
+
+.texto p{
+    text-align: center;
+    max-width: 800px;
+    line-height: 25px;
+    text-shadow: #796d3c 2px 2px;
+}
+
+/*------------------------HOBBIES/TOP5-------------------------------*/
+
+.hobbies_top5 {
+    min-height: 280px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    align-items: top;
+    background-color: #e4722c;
+    color: #ffffff;
+    text-shadow: #796d3c 2px 2px;
+    font-weight: bold;
+    padding: 2rem;
+}
+
+li {
+    width: 103px;
+    height: 150px;
+}
+
+.hobbies ul {
+    display:flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.top5 ul {
+    display:flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.hobbies ul li, .top5 ul li {
+    list-style: none;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    border: #ffa300 5px solid;
+    border-radius: 15px;
+    background-color: #ffd000;
+    box-shadow: #796d3c 3px 3px;
+    font-size: small;
+    overflow: hidden;
+
+    &:hover {
+        transform: scale(1.2);
+        transition: 0.2s;
+    }
+}
+
+.hobbies h2{
+    text-align: end;
+    padding: 30px 10px 10px;
+}
+
+.top5 h2{
+    text-align: start;
+    padding: 30px 10px 10px;
+
+}
+
+/*------------------------DOG APPRECIATION-------------------------------*/
+
+.dog_appreciation {
+    background-color: #ffa300;
+    min-height: 700px;
+    color: #ffffff;
+    text-shadow: #796d3c 2px 2px;
+}
+
+.dog_appreciation h3 {
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.dog_photos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.dog_photos figure figcaption {
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.dog_photos figure img {
+    border-radius: 15px;
+    box-shadow: #796d3c 3px 3px;
+
+    &:hover {
+        transform: scale(1.2);
+        transition: 0.2s;
+    }
+}
+
+/*-----------------------FEEDBACK--------------------------------*/
+
+.sessão_feedback {
+    background-color: #e4722c;
+    color: #ffffff;
+    text-shadow: #796d3c 2px 2px;
+    padding: 40px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 1128px;
+    padding: 1rem;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+}
+
+.forms {
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.forms input {
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 15px;
+    border: #ffa300 5px solid;
+    background-color: #ffd000;
+    box-shadow: #796d3c 3px 3px;
+    font-size: 16px;
+    text-shadow: #ffffff 2px 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    &:hover {
+        scale: 1.05;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+}
+
+.forms button {
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: 15px;
+    border: #ffa300 5px solid;
+    background-color: #ffd000;
+    box-shadow: #796d3c 3px 3px;
+    font-size: 16px;
+    color: #ffffff;
+    text-shadow: #796d3c 2px 2px;
+
+    &:hover {
+        scale: 1.2;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+}
+
+#opinions {
+    padding: 1rem;
+    background-color: #ffa300;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0px;
+    border-top: #ffffff solid 4px;
+}
+
+.feedback_div {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    background-color: #ffd000;
+    border: #ffffff solid 2px;
+    border-radius: 15px;
+    align-items: start;
+    gap: 10px;
+    box-shadow: #796d3c 3px 3px;
+
+    &:hover {
+        scale: 1.1;
+        transition: 0.2s;
+    }
+}
+
+.feedback_nome {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    color: #555555;
+    text-shadow: #796d3c 1px 1px;
+}
+
+.feedback_p {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    color: #555555;
+    text-shadow: #796d3c 1px 1px;
+    word-wrap: break-word;
+}
+
+/*------------------------FOOTER-------------------------------*/
+
+footer {
+    background-color: #e4722c;
+    border-top: #ffffff solid 4px;
+    min-height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #ffffff;
+    text-shadow: #796d3c 2px 2px;
+}
+
+.imagens {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+footer button {
+    width: 120px;
+    border-radius: 15px;
+    border: #ffa300 5px solid;
+    background-color: #ffd000;
+    box-shadow: #796d3c 3px 3px;
+    font-size: 16px;
+    color: #ffffff;
+    text-shadow: #796d3c 2px 2px;
+
+    &:hover {
+        scale: 1.2;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+}
+
+/*------------------------RESPONSIVIDADE-------------------------------*/
+
+@media screen and (max-width: 428px) {
+    .sobre {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .texto {
+        margin-bottom: 16px;
+    }
+
+    .hobbies_top5 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hobbies h2 {
+        text-align: start;
+    }
+
+    .hobbies ul, .top5 ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .dog_photos {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .feedback {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
